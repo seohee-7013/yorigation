@@ -1,0 +1,265 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>Bato Template</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="" />
+   <meta name="keywords" content="" />
+   <meta name="author" content="" />
+
+  <!-- Facebook and Twitter integration -->
+   <meta property="og:title" content=""/>
+   <meta property="og:image" content=""/>
+   <meta property="og:url" content=""/>
+   <meta property="og:site_name" content=""/>
+   <meta property="og:description" content=""/>
+   <meta name="twitter:title" content="" />
+   <meta name="twitter:image" content="" />
+   <meta name="twitter:url" content="" />
+   <meta name="twitter:card" content="" />
+
+   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+   <link rel="shortcut icon" href="favicon.ico">
+
+   <link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
+   
+   <!-- Animate.css -->
+   <link rel="stylesheet" href="css/animate.css">
+   <!-- Icomoon Icon Fonts-->
+   <link rel="stylesheet" href="css/icomoon.css">
+   <!-- Bootstrap  -->
+   <link rel="stylesheet" href="css/bootstrap.css">
+   <!-- Owl Carousel -->
+   <link rel="stylesheet" href="css/owl.carousel.min.css">
+   <link rel="stylesheet" href="css/owl.theme.default.min.css">
+   <!-- Magnific Popup -->
+   <link rel="stylesheet" href="css/magnific-popup.css">
+
+   <link rel="stylesheet" href="css/style.css">
+
+
+   <!-- Modernizr JS -->
+   <script src="js/modernizr-2.6.2.min.js"></script>
+   <!-- FOR IE9 below -->
+   <!--[if lt IE 9]>
+   <script src="js/respond.min.js"></script>
+   <![endif]-->
+   <style>
+      body{
+         background-color: ivory;
+     }
+   </style>
+   </head>
+   <body>
+
+   <nav id="colorlib-main-nav" role="navigation">
+      <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle active"><i></i></a>
+      <div class="js-fullheight colorlib-table">
+         <div class="colorlib-table-cell js-fullheight">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="form-group">
+                     <h3>LogIn</h3>
+                     <input type="text" name="login_id" class="form-control" placeholder="ID">
+                     <input type="password" name="login_pw" class="form-control" placeholder="PW">
+                     <input type="submit" value="LOGIN" class="btn1 btn-primary btn-submit1"><input type="submit" value="JOIN" class="btn1 btn-primary1 btn-submit2" onclick="location.href='join.html'">
+                     <!-- <button type="submit" class="btn btn-primary"><i class="icon-search3"></i></button> -->
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-12">
+                  <ul>
+                     <li class="active"><a href="index.html">Home</a></li>
+                     <!-- <li><a href="login.html">Login</a></li> -->
+                     <!-- <li><a href="join.html">Join</a></li> -->
+                     <li><a href="about.html">About</a></li>
+                     <!-- <li><a href="contact.html">Contact</a></li> -->
+                  </ul>
+               </div>
+            </div>
+            <div class="row">
+              
+            </div>
+         </div>
+      </div>
+   </nav>
+   
+   <div id="colorlib-page">
+      <header>
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="colorlib-navbar-brand">
+                     <a class="colorlib-logo" href="index.html">yori</a>
+                  </div>
+                  <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+               </div>
+            </div>
+         </div>
+      </header>
+      <div id="colorlib-hero" class="js-fullheight">
+         <div>
+            <div class="item">
+               <div class="hero-flex js-fullheight">
+                  <div class="col-three-forth">
+                     <!-- <div class="hero-img js-fullheight" style="background-image: url(images/opensandwich.jpg);"></div> -->
+                  </div>
+                  <div class="col-one-forth js-fullheight">
+                     <div class="display-t js-fullheight">
+                        <div class="display-tc js-fullheight">
+                           
+                           <div class="text-inner">
+                              <div>
+                                 <span class="tag"></span>
+                                 <h2>Yorigation</h2>
+                                 <p></p>
+ <!-- input 태그  -->
+                            <div class="text_search1">
+                              <form method="get" action="list.html">
+                                 <input id="query" class="today" type="text" placeholder="오늘은 뭐 먹지?" name="search"> 
+                                          <button  class="btn btn-primary" onclick="location.href='list.html'" ><i class="icon-search3"></i></button><br><br>
+                                          
+                              </form>
+
+                           </div>
+
+                                 <!-- <p><a href="work.html" class="btn-view">검색어를 말해주세요 <i class="icon-arrow-right3"></i></a></p> -->
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <script src="js/jquery-3.4.1.min.js"></script>
+
+            <script>
+
+               window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition; // api 불러오는 코드
+               
+               const recognition = new SpeechRecognition(); //api 호출
+               recognition.interimResults= false; // 말하는 과정까지 띄워줌 / false = 말 끝나면 띄워줌
+               recognition.lang = 'ko-KR';  // 언어 설정
+               
+               let p = document.createElement('p'); // 하얀 박스
+               const words = document.querySelector('.words'); // 음성을 글자로
+               // words.appendChild(p); // 음성을 박스에 띄워주는 코드
+               
+               recognition.addEventListener('result', voiceRecording =>{
+                const transcript = Array.from(voiceRecording.results)
+                  .map(result => result[0])
+                  .map(result => result.transcript)
+                  .join('');
+               
+                  p.textContent = transcript; // transcript = 사용자 음성 / 사용자 음성을 하얀 박스에 띄움
+               
+                  if (voiceRecording.results[0].isFinal) { // 말이 끝나면 새롭게 문단을 나눠주는 코드 
+                   //  p=document.createElement('p'); // transcript를 띄워주는 코드
+                   //  words.appendChild(p); 
+                    }
+               
+                   console.log(transcript);
+
+                   if(transcript.includes('요리')||transcript.includes('유리')||transcript.includes('야')){
+                     text_to_speech("어떤 요리를 검색할까요?");
+                   };
+       
+       
+       
+                   var keywordsArr = ['크림 리조또','오므라이스','떡볶이', '파스타', '흑양탕', '지리탕', '햄버거', '까르보나라 떡볶이', '하루 한 끼']; // 검색어 띄워주기 
+                    
+                   function search() {
+                       for(var i = 0; i <keywordsArr.length; i++) {
+                           if (transcript.includes(keywordsArr[i])) { // 특정 문자열 포함 여부 확인
+                               document.getElementById('query').value = keywordsArr[i]; 
+                           } 
+                       }
+                    };
+                    search();
+                    
+                    function btnClick(){
+                     $('button').trigger('click'); //버튼 자동으로 클릭해줌
+                    }
+       
+                   // 검색창에 음식 이름 들어가면 자동으로 검색된다.
+                   if(document.getElementById('query').value!==""){
+                     //검색어 저장
+                     localStorage.setItem('keyword', document.getElementById('query').value );
+                     window.setTimeout(btnClick,2000);
+                   
+                   };
+       
+               });
+                 
+               recognition.addEventListener('end', recognition.start); // 음성 인식이 끝나면 다시 시작하는 코드 
+               
+               recognition.start();
+               
+               
+
+                   // 텍스트를 음성으로
+                   function text_to_speech(txt) {
+                           // Web Speech API - speech synthesis
+                           if ('speechSynthesis' in window) {
+                               // Synthesis support. Make your web apps talk!
+                               console.log("음성합성을 지원하는  브라우저입니다.");
+                           }
+                           var systemVoice = new SpeechSynthesisUtterance();
+                           var voices = window.speechSynthesis.getVoices();
+                           // systemVoice.voice = voices[10]; // 두번째 부터 완전 외국인 발음이 됨. 사용하지 말것.
+                           systemVoice.voiceURI = 'native';
+                           systemVoice.volume = 1; // 0 to 1
+                           systemVoice.rate = 0.9; // 0.1 to 10
+                           systemVoice.pitch = 1.5; //0 to 2
+                           systemVoice.text = txt;
+                           systemVoice.lang = 'ko-KR';
+               
+                           systemVoice.onend = function (e) {
+                               if (isRecognizing == false) {
+                                   recognition.start();
+                               }
+                               console.log('Finished in ' + event.elapsedTime + ' seconds.');
+                           };
+                           window.speechSynthesis.speak(systemVoice);
+                       }
+               
+                  $(document).ready(function(){
+                     text_to_speech("어떤 요리를 검색할까요?");
+                   });
+
+                  
+                   
+               </script>
+       
+              
+      </div>
+   
+   </div>
+
+
+   <!-- jQuery -->
+   <script src="js/jquery.min.js"></script>
+   <!-- jQuery Easing -->
+   <script src="js/jquery.easing.1.3.js"></script>
+   <!-- Bootstrap -->
+   <script src="js/bootstrap.min.js"></script>
+   <!-- Waypoints -->
+   <script src="js/jquery.waypoints.min.js"></script>
+   <!-- Magnific Popup -->
+   <script src="js/jquery.magnific-popup.min.js"></script>
+   <script src="js/magnific-popup-options.js"></script>
+
+   <!-- Main JS (Do not remove) -->
+   <script src="js/main.js"></script>
+
+
+
+
+
+   </body>
+
+</html>
